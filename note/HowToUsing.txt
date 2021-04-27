@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BasicCRUD.note
+{
+    class HowToUsing
+    {
+        // Sử dụng từ khóa 'using' đối với các đối tượng kiểu IDispose.
+        // (Là đối tượng của Interface IDispose).
+        // Ngó qua EmployeeDAO.cs để biết cmd là gì
+        using (DbDataReader reader = cmd.ExecuteReader())
+        {
+           // Code sử dụng reader
+        }
+
+        // Tương đương với cách viết truyền thống.
+        DbDataReader reader = cmd.ExecuteReader();
+        try
+        {
+            // Code sử dụng reader
+        }
+        finally
+        {
+            // Gọi phương thức tiêu hủy đối tượng
+            // Giải phóng tài nguyên.
+            reader.Dispose();
+        }
+    }
+}
